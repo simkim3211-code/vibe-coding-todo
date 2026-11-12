@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>할일 — Todo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Outfit:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page">
+      <header class="header">
+        <p class="brand">할일</p>
+        <h1 class="headline">오늘 할 일을 정리하세요</h1>
+        <p class="sub">추가하고, 고치고, 지울 수 있습니다.</p>
+      </header>
+
+      <form class="composer" id="todo-form" autocomplete="off">
+        <label class="sr-only" for="todo-input">새 할일</label>
+        <input
+          id="todo-input"
+          name="todo"
+          type="text"
+          placeholder="새 할일을 입력하세요"
+          maxlength="120"
+          required
+        />
+        <button type="submit" class="btn btn-primary">추가</button>
+      </form>
+
+      <section class="list-section" aria-labelledby="list-heading">
+        <div class="list-meta">
+          <h2 id="list-heading">목록</h2>
+          <p class="count" id="todo-count">0개</p>
+        </div>
+        <p class="status" id="list-status">목록을 불러오는 중…</p>
+        <ul class="todo-list" id="todo-list" aria-live="polite"></ul>
+        <p class="empty" id="empty-state">아직 할일이 없습니다.</p>
+      </section>
+    </div>
+
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
